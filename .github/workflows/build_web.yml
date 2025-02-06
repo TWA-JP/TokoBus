@@ -19,6 +19,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Checkout website branch
+        uses: actions/checkout@v4
+        with:
+          ref: website
+          path: worktree-gh-pages
+
       - name: Wait for push to complete
         if: github.event_name == 'workflow_call'
         run: |
@@ -40,13 +46,13 @@ jobs:
       - name: Run flutter doctor
         run: flutter doctor -v
 
-      - name: Clone 
-        run: |
-          mkdir ./worktree-gh-pages
-          cd ./worktree-gh-pages
-          # git clone https://github.com/twajp/TokoBusWebsite.git .
-          # rm -rf .git
-          git checkout website
+      # - name: Clone 
+      #   run: |
+      #     mkdir ./worktree-gh-pages
+      #     cd ./worktree-gh-pages
+      #     # git clone https://github.com/twajp/TokoBusWebsite.git .
+      #     # rm -rf .git
+      #     git checkout website
 
       - name: Build
         run: |
