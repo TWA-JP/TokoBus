@@ -49,6 +49,10 @@ jobs:
           cd ./worktree-gh-pages
           cp -r ../build/web/. ./app
 
+      - name: Clone 
+        run: |
+          git clone git@github.com:twajp/TokoBusWebsite.git
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
