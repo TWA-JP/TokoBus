@@ -44,7 +44,7 @@ jobs:
         run: |
           flutter --version
           flutter pub get
-          flutter build web
+          flutter build web --web-renderer html --base-href /$(echo ${{ github.repository }} | sed -e "s#.*/##")/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
