@@ -19,10 +19,10 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout website branch
+      - name: Checkout web-source branch
         uses: actions/checkout@v4
         with:
-          ref: website
+          ref: web-source
           path: worktree-gh-pages
 
       - name: Wait for push to complete
@@ -45,14 +45,6 @@ jobs:
 
       - name: Run flutter doctor
         run: flutter doctor -v
-
-      # - name: Clone 
-      #   run: |
-      #     mkdir ./worktree-gh-pages
-      #     cd ./worktree-gh-pages
-      #     # git clone https://github.com/twajp/TokoBusWebsite.git .
-      #     # rm -rf .git
-      #     git checkout website
 
       - name: Build
         run: |
