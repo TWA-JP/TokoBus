@@ -53,6 +53,7 @@ jobs:
         run: |
           cd ./worktree-gh-pages
           git clone https://github.com/twajp/TokoBusWebsite.git
+          git rm ./.git
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
