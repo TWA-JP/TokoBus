@@ -52,7 +52,7 @@ jobs:
       - name: Clone 
         run: |
           cd ./worktree-gh-pages
-          git clone https://github.com/twajp/TokoBusWebsite.git
+          git clone https://github.com/twajp/TokoBusWebsite.git .
           ls
           rm -rf .git
 
