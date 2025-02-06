@@ -51,6 +51,7 @@ jobs:
 
       - name: Clone 
         run: |
+          pwd
           git clone https://github.com/twajp/TokoBusWebsite.git
 
       - name: Deploy
