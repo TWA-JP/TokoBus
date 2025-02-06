@@ -51,7 +51,7 @@ jobs:
 
       - name: Clone 
         run: |
-          git clone git@github.com:twajp/TokoBusWebsite.git
+          git clone https://github.com/twajp/TokoBusWebsite.git
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
