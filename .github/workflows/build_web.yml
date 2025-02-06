@@ -44,8 +44,9 @@ jobs:
         run: |
           mkdir ./worktree-gh-pages
           cd ./worktree-gh-pages
-          git clone https://github.com/twajp/TokoBusWebsite.git .
-          rm -rf .git
+          # git clone https://github.com/twajp/TokoBusWebsite.git .
+          # rm -rf .git
+          git checkout website
 
       - name: Build
         run: |
