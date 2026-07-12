@@ -1,6 +1,5 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
 
@@ -30,8 +29,8 @@ if (flutterVersionName == null) {
 
 android {
     compileSdkVersion flutter.compileSdkVersion
-//    ndkVersion flutter.ndkVersion
-    ndkVersion = "27.0.12077973"
+    ndkVersion flutter.ndkVersion
+//    ndkVersion = "27.0.12077973"
 
     namespace "jp.twa.tokobus"
 
@@ -40,11 +39,6 @@ android {
 //        targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-//        jvmTarget = '1.8'
-        jvmTarget = JavaVersion.VERSION_17
     }
 
     sourceSets {
@@ -77,6 +71,12 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
