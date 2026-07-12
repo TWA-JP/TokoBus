@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> jsonAlertHandler({required BuildContext context}) async {
-  final url = Uri.parse('https://raw.githubusercontent.com/twajp/TokoBus/master/data/dialog.json');
+  final url = Uri.parse('https://raw.githubusercontent.com/twajp/tokobus/master/data/dialog.json');
   // final url = Uri.parse('../../data/dialog.json'); // テスト用
   final response = await http.get(url);
 
